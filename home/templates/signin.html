@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %} Signin {% endblock title %}
+
+{% block header1 %}  {% include 'header1.html' %}   {% endblock header1 %}
+
+
+{% block header %}  {% include 'header.html' %}   {% endblock header %}
+
+
+{% block carousel %}   {% include 'carousel.html' %}  {% endblock carousel %}
+
+
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-5">
+      <img src="{% static '' %}img/tim-mossholder-8FBTtjCZ9oM-unsplash.jpg" class="w-100 h-100" alt="">
+    </div>
+    <div class="col-12 col-md-7">
+      <h2 class="text-center">Signin</h2>
+      <div class="cform">
+        <div class="ccform">
+          <form action="{% url 'signin' %}" method= "POST">
+           {% csrf_token %}
+                <div class="form-floating mb-3">
+                  <input type="text" name="username" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <input type="Password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <div class="shows">
+                    <i class="fa-solid fa-eye"></i>
+                  </div>  
+                  <label for="floatingPassword">Password</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Signin</button>
+              <a href="{% url 'signup' %}" class="btn btn-success">Signup</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+{% endblock content %}
+
+
+{% block contact %}   {% include 'contact.html' %}   {% endblock contact %}
+
+
+{% block footer %}   {% include 'footer.html' %}   {% endblock footer %}
+

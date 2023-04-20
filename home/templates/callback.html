@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{details.title}} {% endblock title %}
+
+{% block header1 %}  {% include 'header1.html' %}  {% endblock header1  %}
+
+{% block header %}  {% include 'header.html' %}  {% endblock header  %}
+
+{% block carousel %}  {% include 'carousel.html' %}  {% endblock carousel  %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-3"></div>
+    <div class="col-12 col-sm-6">
+       <div class="container mt-5 mb-5">
+        <h2>{{user.first_name}}</h2>
+        <h5>Payment for your order was successful!</h5>
+
+
+        <p>Thank you for your patronage, we look forward
+          to doing  more business  with you and do deliver your order in the
+          shortest time possible
+        </p>
+       </div>
+    </div>
+    <div class="col-12 col-sm-3"></div>
+  </div>
+</div>
+
+
+{% endblock content %}
+    
+{% block contact %}  {% include 'contact.html' %}  {% endblock contact  %}
+
+{% block footer %}  {% include 'footer.html' %}  {% endblock footer  %}

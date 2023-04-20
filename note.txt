@@ -1,0 +1,40 @@
+
+python -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin startproject shopping .
+py manage.py startapp userprofile
+py manage.py migrate
+py manage.py runserver
+
+
+to cut server use ctrl + c
+
+
+models ( determines how our database architechture looks like...i.e how data is being stored)
+
+on the models, we have several fields which are :
+CharField(max_length=255)
+TextField()
+URLField()
+EmailField()
+FileField()
+ImageField()
+DateField()
+DataTimeField(auto_now = True, auto_add_now + True)
+IntegerField()
+FoatField()
+DecimalField()
+SlugField()........etc
+
+
+admin ( admin prints out inputs from the clients on the admin panel)
+
+forms ( helps to make a duplicate/ replica of the client form on the server side)
+
+views ( helps to get data/ impliment functionalities)
+
+urls ( chains views to both templates and to the browser).
+
+
+

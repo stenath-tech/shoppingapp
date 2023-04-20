@@ -1,0 +1,30 @@
+t
+
+    <div class="kevin">
+        <div class="three-body">
+          <div class="three-body__dot"></div>
+          <div class="three-body__dot"></div>
+          <div class="three-body__dot"></div>
+        </div>
+      </div>
+  
+      <div class="container-fluid bg-light" id="backtotop">
+          <div class="row mx-5">
+              <div class="col-6">Contact: +1 345 5785 5789</div>
+              <div class="col-6">Email: info@youremail.com</div>
+          </div>
+      </div>
+      
+
+      
+      <div class="container">
+        {% if messages %}
+            {% for message in message %}
+            <div class="alert alert-warning alert-dismissible fade show shola w-100" role="alert">
+              <strong>{{message}}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %} 
+        {% endif %}
+      </div>
+        

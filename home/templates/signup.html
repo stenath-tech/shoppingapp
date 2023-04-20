@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Signup {% endblock title %}
+
+{% block header1 %}  {% include 'header1.html' %}   {% endblock header1 %}
+
+
+{% block header %}  {% include 'header.html' %}   {% endblock header %}
+
+
+{% block carousel %}   {% include 'carousel.html' %}  {% endblock carousel %}
+
+
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-4">
+          <img src="{% static '' %}IMG/sixteen-miles-out-OGND72jS-HE-unsplash.jpg" class="w-100 h-100 fine" alt="">
+      </div>
+      <div class="col-12 col-md-7">
+          <h2 class="text-center">Sign Up</h2>
+          <div class="cform">
+              <div class="ccform">
+                  <form action="">
+                      <div class="row justify-content-center">
+                          <div class="col-12 col-md-6">
+                              <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                  <label for="floatingInput">First Name</label>
+                              </div>
+                          </div>
+                          
+                          <div class="col-12 col-md-6">
+                              <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                                  <label for="floatingPassword">Last Name</label>
+                              </div>
+                          </div>
+                          <div class="col-12 col-md-6">
+                              <div class="form-floating mb-3">
+                                  <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                  <label for="floatingInput">Username</label>
+                              </div>
+                          </div>
+                          
+                          <div class="col-12 col-md-6">
+                              <div class="form-floating mb-3">
+                                  <input type="email" class="form-control" id="floatingPassword" placeholder="Password">
+                                  <label for="floatingPassword">Email Address</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Phone Number</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">State</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <input type="Password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                          <input type="Password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Confirm Password</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Signup</button>
+                      <a href="signin.html" class="btn btn-success">Signin</a>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+{% comment %} <div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-5">
+      <img src="{% static '' %}img/tim-mossholder-8FBTtjCZ9oM-unsplash.jpg" class="w-100 h-100" alt="">
+    </div>
+    <div class="col-12 col-md-7">
+      <h2 class="text-center">Signup</h2>
+      <div class="cform">
+        <div class="ccform">    
+        <form action="{% url 'signup' %}" method= "POST" >
+  {% csrf_token %}">
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-6">
+        <div class="form-floating mb-3">
+          <input type="text" name="first_name" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">First Name</label>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-floating mb-3">
+          <input type="text" name="last_name" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Last Name</label>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-floating mb-3">
+          <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Username</label>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-floating mb-3">
+          <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Email Address</label>
+        </div>
+      </div>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" name="phone" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Phone Number</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" name="gender" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Gender</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" name="address" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Address</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" name="state" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">State</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="date" name="dob" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <input type="hidden" name="pix" value="pix/avatar.jpg" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Date of Birth</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="text" name='nationality' class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Nationality</label>
+  </div>
+  <div class="form-floating mb-3 shows-hide">
+    <input type="password" name="password1" class="form-control" id="floatingPassword" placeholder="Password">
+    <label for="floatingPassword">Password</label>
+  </div>
+  <div class="form-floating mb-3 shows-hide">
+    <input type="password" name="password2" class="form-control" id="floatingPassword" placeholder="Password">
+    <label for="floatingPassword">Confirm Password</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Signup</button>
+  <a href="{% url 'signin' %}" class="btn btn-info" >Signin</a>
+</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endcomment %}
+
+{% endblock content %}
+
+
+{% block contact %}   {% include 'contact.html' %}   {% endblock contact %}
+
+
+{% block footer %}   {% include 'footer.html' %}   {% endblock footer %}
+

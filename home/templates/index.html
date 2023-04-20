@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} |Home_page{% endblock title %}
+
+{% block header1 %}  {% include 'header1.html' %}  {% endblock header1  %}
+
+{% block header %}  {% include 'header.html' %}  {% endblock header  %}
+
+{% block carousel %}  {% include 'carousel.html' %}  {% endblock carousel  %}
+
+{% block content %}
+<div class="container-fluid mt-5 mb-5" id="about">
+    <h2 class="text-center prod mt-4 mb-5">Welcome to ShoesByEliteDev</h2>
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-5">
+            <img src="{% static '' %}IMG/nick-de-partee-5DLBoEX99Cs-unsplash.jpg" class="w-100 h-100 finee" alt="">
+        </div>
+        <div class="col-10 col-md-5">
+            <div class="w-100 lib">
+                <h2>What we stand for</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Dignissimos cumque mollitia hic quia facilis deserunt 
+                    inventore accusantium quos provident, saepe eveniet nisi 
+                    incidunt asperiores ad eius! Ratione amet omnis totam? 
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nam, nesciunt?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ratione repudiandae blanditiis quia nulla. Sed culpa error 
+                    iusto nostrum necessitatibus, officiis, voluptatum consequuntur 
+                    voluptatem totam laboriosam molestias saepe blanditiis, deserunt
+                    ulla perferendis similique aliquid minus possimus dicta natus 
+                    ipsam est? Animi!</p>     
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5 bg-light p-5">
+    <h2 class="produ text-center">Our Category</h2>
+    <div class="row justify-content-center gy-3">
+
+
+        
+        {% if category  %}
+           {% for item in category %}
+           <div class="col-10 col-sm-10 col-md-4">
+            <div class="card h-100">
+                <img src="{{item.img.url}}" class="card-img-top h-100" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+           {% endfor %} 
+        {% endif %}
+            
+       
+        
+    </div>
+</div>
+
+<div class="container-fluid" id="service">
+    <div class="cave">
+        <h2 class="mb-3 mt-2 produ text-center">Our Services</h2>
+        <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+             Molestias, voluptatibus reprehenderit ipsa cumque eum id? Lorem ipsum 
+             dolor sit amet.</p>
+        <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, fuga.</p>     
+        <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, fuga.</p>     
+        <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, fuga.</p>     
+        <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, fuga.</p>     
+    </div>
+</div>
+
+{% endblock content %}
+    
+{% block contact %}  {% include 'contact.html' %}  {% endblock contact  %}
+
+{% block footer %}  {% include 'footer.html' %}  {% endblock footer  %}
