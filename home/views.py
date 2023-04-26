@@ -1,6 +1,6 @@
 import uuid
-import requests
 import json
+import requests
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 from . models import *
@@ -131,17 +131,20 @@ def signup(request):
             newprofile.save()
             login(request, user)
             messages.success(request, "Your account was created" )
-            send_mail(
-                "Thank You",
-                "We got your message... and it will be attented to in due time",
-                {user.email},
-                fail_silently=False,
-            )
+            # send_mail(
+            #     "Thank You",
+            #     "We got your message... and it will be attented to in due time",
+            #     settings.EMAIL_HOST_USER
+            #     [user.email],
+            #     fail_silently=False,
+            # )
             return redirect('index')
         else:
             messages.error(request, form.errors)
             return redirect('signup')
     return render(request, 'signup.html')
+
+from django.conf import settings
 
 @login_required(login_url='signin')
 def profile(request):
@@ -380,3 +383,18 @@ def callback(request):
 
 
 
+def search(request):
+    if request.method == 'POST':
+        items = request.POST['search']
+        searched = Q(Q(title__icontains=items) | Q(description__icontains=items) |Q(category__title__icontains=items) |Q(category__title__icontains=items)  |Q(price__icontains=items))
+        searched_items = Product.objects.filter(searched)
+
+        context = {
+            'items': items,
+            'searched_items': searched_items,
+        }
+        return render(request, 'search.html', context)
+    
+    else:
+        messages.error
+        return render(request, 'search.html', context)

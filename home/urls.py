@@ -39,5 +39,6 @@ urlpatterns = [
     path('checkout/', views.checkout, name= 'checkout'),
     path('pay/', views.pay, name= 'pay'),
     path('callback/', views.callback, name= 'callback'),
+    path('search/', views.search, name= 'search'),
     
 ]
