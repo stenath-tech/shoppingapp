@@ -321,7 +321,7 @@ def pay(request):
     if request.method == 'POST':
         api_key = 'sk_test_1c81d9f5cfe340a94127e9621318ab68640236d4'
         curl = 'https://api.paystack.co/transaction/initialize'
-        cburl = 'http://3.95.151.135/callback/'
+        cburl = 'http://16.16.115.119/callback/'
         ref = str(uuid.uuid4())
         profile = Profile.objects.get(user__username=request.user.username)
         shop_code = profile.id
@@ -331,7 +331,7 @@ def pay(request):
         last_name = user.last_name
         email = user.email
         phone = request.POST['phone']
-        address = request.POST['address']
+        address = request.POST['address'] 
         headers = {'Authorization': f'Bearer {api_key}'}
         data = {'reference': ref, 'callback_url': cburl, 'amount': int(total), 'email': user.email, 'order_number': shop_code, 'currency': 'NGN'}
 
